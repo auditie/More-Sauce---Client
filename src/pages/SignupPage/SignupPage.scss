@@ -18,11 +18,11 @@
     @include desktop {
         margin-top: 20%;
         width: 60vw;
-        height: 40vh;
+        height: auto;
+        padding: 6vh 0;
     }
 
     &__user-info {
-        margin-top: 6%;
         display: flex;
         flex-direction: column;
         @include centered;
@@ -44,7 +44,7 @@
             border-radius: 15px;
             height: 3vh;
 
-            &--first {
+            &--first, &--second {
                 margin-bottom: 4vh;
             }
         }
@@ -63,7 +63,7 @@
         }
     }
 
-    &__login, &__search-submit {
+    &__signup, &__cancel {
         @include button-cta;
     }
 }
