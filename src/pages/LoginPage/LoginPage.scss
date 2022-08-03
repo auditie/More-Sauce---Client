@@ -21,21 +21,32 @@
         height: 40vh;
     }
 
-    &__search {
+    &__user-info {
+        margin-top: 6%;
+        display: flex;
+        flex-direction: column;
         @include centered;
-        border: none;
-        border-radius: 30px;
-        width: 75%;
-        height: 3.5vh;
-        margin-bottom: 10%;
-        padding: .8em;
-        font-size: 1.3em;
 
         @include desktop {
-            width: 50vw;
-            height: 3vh;
-            margin-bottom: 5vh;
+            width: 80%;
+        }
+
+        &-label {
+            margin-bottom: 3%;
+
+            @include desktop {
+                font-size: 1.5em;
+            }
+        }
+
+        &-input {
+            border: none;
             border-radius: 15px;
+            height: 3vh;
+
+            &--first {
+                margin-bottom: 4vh;
+            }
         }
     }
 
@@ -48,6 +59,7 @@
             @include centered;
             flex-direction: row;
             gap: 5%;
+            margin-top: 10%;
         }
     }
 
