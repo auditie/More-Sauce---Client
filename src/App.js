@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage/HomePage';
 import PageHeader from './components/PageHeader/PageHeader';
 import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
+import RestaurantPage from './pages/RestaurantPage/RestaurantPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         {/* <Route path='/login' component={LoginPage} />*/}
         {/* <Route path='/restaurants' component={RestaurantList} />*/}
         {/* <Route path='/restaurants/:restaurantId' component={Restaurant} />*/}
+        <Route path='/restaurant' component={RestaurantPage} />
         {/* <Route path='/restaurants/:restaurantId/:sauceId' component={SauceItem} />*/}
       </Switch>
     </Router>
