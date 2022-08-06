@@ -1,0 +1,27 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+
+.restaurant {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    background-color: grey;
+    border-radius: 35px;
+    padding: .5vh 2vw;
+
+    &__name {
+        color: white;
+        @include desktop {
+            font-size: 1.2em;
+        }
+    }
+
+    &__button {
+        text-decoration: none;
+        color: white;
+        background-color: black;
+        border-radius: 30px;
+        padding: 2vh 1vw;
+    }
+}

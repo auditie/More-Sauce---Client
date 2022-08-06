@@ -5,7 +5,7 @@
 .home-page {
     margin-top: 35%;
     width: 80vw;
-    height: 55vh;
+    height: auto;
     background-color: pink;
     @include centered;
     border-radius: 10px;
@@ -51,7 +51,7 @@
             width: 50vw;
             height: 3vh;
             margin-bottom: 5vh;
-            border-radius: 15px;
+            border-radius: 30px;
         }
     }
 
@@ -69,5 +69,9 @@
 
     &__login, &__search-submit {
         @include button-cta;
+    }
+
+    &__restaurants {
+        margin-top: 4vh;
     }
 }
