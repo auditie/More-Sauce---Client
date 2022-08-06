@@ -10,12 +10,16 @@ class HomePage extends Component {
     render() {
         return (
             <div className='home-page'>
-                <input type='text' placeholder='Search Restaurants...' className='home-page__search' />
-                <div className='home-page__buttons'>
+                <div className='home-page__search-request'>
+                    <input type='text' placeholder='Search Restaurants...' className='home-page__search-request-bar' />
+                    <button className='home-page__search-request-start'>Go</button>
+                </div>
+                {/* <div className='home-page__buttons'>
                     <button type='submit' className='home-page__search-submit'>Pour Sauce</button>
                     <button type='submit' className='home-page__login'>Log In</button>
-                </div>
+                </div> */}
                 <div className='home-page__restaurants'>
+                    <RestaurantsListItem />
                     <RestaurantsListItem />
                     <RestaurantsListItem />
                     <RestaurantsListItem />
