@@ -1,5 +1,7 @@
 import './RestaurantPage.scss';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
+import RestaurantSauce from '../../components/RestaurantSauce/RestaurantSauce';
 
 class RestaurantPage extends Component {
     state = {
@@ -15,8 +17,19 @@ class RestaurantPage extends Component {
                         <h2 className='restaurant-page__head-subtitle'>Sauce List</h2>
                     </div>
                     <div className='restaurant-page__head-right'>
-                        <button className='restaurant-page__head-exit'>x</button>
+                        <button className='restaurant-page__head-exit'>
+                            <Link to ='/' className='restaurant-page__head-exit--link'>x</Link>
+                        </button>
                     </div>
+                </div>
+                <div className='restaurant-page__sauce-list'>
+                    <RestaurantSauce />
+                    <RestaurantSauce />
+                    <RestaurantSauce />
+                    <RestaurantSauce />
+                    <RestaurantSauce />
+                    <RestaurantSauce />
+                    
                 </div>
             </div>
         )
