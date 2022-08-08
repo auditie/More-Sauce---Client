@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import RestaurantSauce from '../../components/RestaurantSauce/RestaurantSauce';
 import axios from 'axios';
+import backArrow from '../../assets/icons/symbols/backarrow.svg';
 
 const API_URL = 'http://localhost:8080';
 
@@ -24,13 +25,12 @@ class RestaurantPage extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props)
+        // console.log(this.props)
         this.getRestaurant(this.props.match.params.restaurantId)
 
         axios
         .get(`${API_URL}/sauces`)
         .then((response) => {
-            console.log(response.data);
             this.setState({
                 sauceList: response.data
             });
@@ -56,14 +56,13 @@ class RestaurantPage extends Component {
                     </div>
                     <div className='restaurant-page__head-right'>
                         <button className='restaurant-page__head-exit'>
-                            <Link to ='/' className='restaurant-page__head-exit--link'>x</Link>
+                            <Link to ='/' className='restaurant-page__head-exit--link'><img src={backArrow} alt='backwards arrow'/> </Link>
                         </button>
                     </div>
                 </div>
                 <div className='restaurant-page__sauce-list'>
                     {
                         filteredSauces.map((sauce) => {
-                            console.log(sauce)
                             return <RestaurantSauce sauce={sauce} key={sauce.id} />
                         })
                     }

@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SauceComment from '../../components/SauceComment/SauceComment';
 import axios from 'axios';
+import backArrow from '../../assets/icons/symbols/backarrow.svg';
 
 const API_URL = 'http://localhost:8080';
 
@@ -29,7 +30,7 @@ class SaucePage extends Component {
 
     render() {
         const currentSauce = this.state.selectedSauce;
-        //console.log(currentSauce)
+        console.log(currentSauce)
         if (!this.state.selectedSauce) {
             return (
                 <h1>Loading...</h1>
@@ -45,7 +46,7 @@ class SaucePage extends Component {
                     </div>
                     <div className='sauce-page__head-right'>
                         <button className='sauce-page__head-exit'>
-                            <Link to ='/' className='sauce-page__head-exit--link'>x</Link>
+                            <Link to ={`/restaurants/${currentSauce.restaurantID}` }className='sauce-page__head-exit--link'><img src={backArrow} alt='backwards arrow'/></Link>
                         </button>
                     </div>
                 </div>
@@ -55,7 +56,11 @@ class SaucePage extends Component {
                             <button className='sauce-page__comments-head-cta'>Leave a Comment</button>
                         </div>
                         <div className='sauge-page__comments-list'>
-
+                            {
+                                currentSauce.comments.map((comment) => {
+                                    return <SauceComment comment={comment} />
+                                })
+                            }
                         </div>
                 </div>
             </div>

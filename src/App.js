@@ -7,6 +7,8 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage';
 import SaucePage from './pages/SaucePage/SaucePage';
 import logo from './assets/logo/moresaucelogo.svg';
+import logo2 from './assets/icons/logos/moresaucelogo-03.svg';
+import logo3 from './assets/icons/logos/longdriplogo-03.svg';
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
     <Router>
         {/* <PageHeader /> */}
         <div className='content-container'>
-          <img className='content-container__logo' src={logo} alt='more sauce logo' />
+          <img className='content-container__logo' src={logo2} alt='more sauce logo' />
           <Switch>
             <Route path='/' exact component={HomePage} />
             <Route path='/login' component={LoginPage} />
