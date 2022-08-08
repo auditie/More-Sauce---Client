@@ -16,9 +16,10 @@ class HomePage extends Component {
         restaurantInput: ""
     }
 
-    getRestaurant = (id) => {
+    getRestaurant = id => {
         axios.get(`${API_URL}/restaurants/${id}`)
             .then((response) => {
+                // console.log(response.data)
                 this.setState({
                     selectedRestaurant: response.data
                 })
@@ -28,6 +29,7 @@ class HomePage extends Component {
     getRestaurantSauces = (id) => {
         axios.get(`${API_URL}/sauces/${id}`)
             .then((response) => {
+                // console.log(response.data)
                 this.setState({
                     saucesList: response.data
                 })
@@ -109,6 +111,7 @@ class HomePage extends Component {
                             />
                         )
                     }} />
+
                 </Switch>
             </div>
         )

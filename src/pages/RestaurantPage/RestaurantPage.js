@@ -20,6 +20,7 @@ const RestaurantPage = (props) => {
                     </div>
                 </div>
                 <div className='restaurant-page__sauce-list'>
+                    // have them link to the current sauce id
                     <RestaurantSauce />
                     <RestaurantSauce />
                     <RestaurantSauce />

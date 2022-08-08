@@ -20,6 +20,15 @@
 
   @include desktop {
     width: 55vw;
-    padding: 12% 5%;
+    padding: 5% 5%;
+  }
+
+  &__logo {
+    display: block;
+    @include centered;
+    @include desktop {
+      width: 30vw;
+      margin-bottom: 5vh;
+    }
   }
 }
