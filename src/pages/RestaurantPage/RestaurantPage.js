@@ -3,19 +3,14 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import RestaurantSauce from '../../components/RestaurantSauce/RestaurantSauce';
 
-const API_URL = 'http://localhost:8080';
-
-class RestaurantPage extends Component {
-    state = {
-
-    }
-
-    render() {
+const RestaurantPage = (props) => {
+    console.log(props.restaurant);
+    console.log(props.sauces);
         return (
             <div className='restaurant-page'>
                 <div className='restaurant-page__head'>
                     <div className='restaurant-page__head-left'>
-                        <h1 className='restaurant-page__head-title'>Arby's</h1>
+                        <h1 className='restaurant-page__head-title'></h1>
                         <h2 className='restaurant-page__head-subtitle'>Sauce List</h2>
                     </div>
                     <div className='restaurant-page__head-right'>
@@ -28,14 +23,10 @@ class RestaurantPage extends Component {
                     <RestaurantSauce />
                     <RestaurantSauce />
                     <RestaurantSauce />
-                    <RestaurantSauce />
-                    <RestaurantSauce />
-                    <RestaurantSauce />
-                    
                 </div>
             </div>
         )
-    }
 }
+
 
 export default RestaurantPage

@@ -4,6 +4,7 @@ import RestaurantsListItem from '../../components/RestaurantsListItem/Restaurant
 import axios from 'axios';
 import { Route, Switch } from 'react-router-dom';
 import RestaurantSearch from '../../components/RestaurantSearch/RestaurantSearch';
+import RestaurantPage from '../RestaurantPage/RestaurantPage';
 
 const API_URL = 'http://localhost:8080';
 
@@ -15,6 +16,24 @@ class HomePage extends Component {
         restaurantInput: ""
     }
 
+    getRestaurant = (id) => {
+        axios.get(`${API_URL}/restaurants/${id}`)
+            .then((response) => {
+                this.setState({
+                    selectedRestaurant: response.data
+                })
+            })
+    }
+
+    getRestaurantSauces = (id) => {
+        axios.get(`${API_URL}/sauces/${id}`)
+            .then((response) => {
+                this.setState({
+                    saucesList: response.data
+                })
+            })
+    }
+
     componentDidMount() {
         axios.get(`${API_URL}/restaurants`)
         .then((response) => {
@@ -23,11 +42,27 @@ class HomePage extends Component {
                 restaurantList: response.data
             });
         })
+
+        axios.get(`${API_URL}/sauces`)
+        .then((response) => {
+            this.setState({
+                saucesList: response.data
+            })
+        })
     }
 
     compondentDidUpdate(prevProps, prevState) {
         if (this.state.restaurantList !== prevState.restaurantList) {
             console.log('Restaurant Found');
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        const previousRestaurantId = prevProps.match.params.restaurantId;
+        const currentRestaurantId = this.props.match.params.restaurantId;
+        if (previousRestaurantId !== currentRestaurantId) {
+            this.getRestaurant(currentRestaurantId);
+            this.getRestaurantSauces(currentRestaurantId);
         }
     }
 
@@ -64,6 +99,14 @@ class HomePage extends Component {
                         findRestaurant={this.findRestaurants}
                         restaurantInput={this.state.restaurantInput}
                         />
+                        )
+                    }} />
+                    <Route path='/restaurants/:restaurantId' exact component={(routerProps) => {
+                        return (
+                            <RestaurantPage 
+                                restaurant={this.state.selectedRestaurant}
+                                sauces={this.state.saucesList}
+                            />
                         )
                     }} />
                 </Switch>
