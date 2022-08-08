@@ -1,10 +1,12 @@
 import './RestaurantSauce.scss';
 import { Link } from 'react-router-dom';
 
-const RestaurantSauce = () => {
+const RestaurantSauce = ({ sauce }) => {
     return (
         <div className='restaurant-sauce'>
-            <h2 className='restaurant-sauce__name'>Arby's Sauce</h2>
+            <Link to={`/sauces/${sauce.id}`} className='restaurant-sauce__link'>
+                <h2 className='restaurant-sauce__name'>{sauce.sauceName}</h2>
+            </Link>
         </div>
     )
 }
