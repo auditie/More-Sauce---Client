@@ -5,6 +5,7 @@ import PageHeader from './components/PageHeader/PageHeader';
 import LoginPage from './pages/LoginPage/LoginPage';
 import SignupPage from './pages/SignupPage/SignupPage';
 import RestaurantPage from './pages/RestaurantPage/RestaurantPage';
+import SaucePage from './pages/SaucePage/SaucePage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path='/login' component={LoginPage} />
             <Route path='/signup' component={SignupPage} />
             <Route path='/restaurant' component={RestaurantPage} />
+            <Route path='/sauce' component={SaucePage} />
             {/* <Route path='/restaurants' component={RestaurantList} />*/}
             {/* <Route path='/restaurants/:restaurantId' component={Restaurant} />*/}
             {/* <Route path='/restaurants/:restaurantId/:sauceId' component={SauceItem} />*/}
