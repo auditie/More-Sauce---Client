@@ -5,9 +5,6 @@ import SauceComment from '../../components/SauceComment/SauceComment';
 
 
 class SaucePage extends Component {
-    state = {
-
-    }
 
     render() {
         return (
@@ -30,9 +27,7 @@ class SaucePage extends Component {
                             <button className='sauce-page__comments-head-cta'>Leave a Comment</button>
                         </div>
                         <div className='sauge-page__comments-list'>
-                            <SauceComment />
-                            <SauceComment />
-                            <SauceComment />
+
                         </div>
                 </div>
             </div>

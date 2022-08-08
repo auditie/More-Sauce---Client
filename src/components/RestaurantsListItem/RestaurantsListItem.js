@@ -1,10 +1,10 @@
 import './RestaurantsListItem.scss';
 import { Link } from 'react-router-dom';
 
-const RestaurantsList = () => {
+const RestaurantsList = ({ restaurant }) => {
     return (
         <div className='restaurant'>
-            <h2 className='restaurant__name'>Chick-fil-A</h2>
+            <h2 className='restaurant__name'>{restaurant.name}</h2>
             {/* <Link to='/' className='restaurant__button'>Sauce Menu</Link> */}
         </div>
     )
