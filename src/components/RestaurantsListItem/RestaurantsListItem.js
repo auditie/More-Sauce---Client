@@ -5,7 +5,7 @@ const RestaurantsList = ({ restaurant }) => {
     return (
         <div className='restaurant'>
             <h2 className='restaurant__name'>{restaurant.name}</h2>
-            {/* <Link to='/' className='restaurant__button'>Sauce Menu</Link> */}
+             <Link to={`/restaurants/${restaurant.id}`} className='restaurant__button'>Sauce Menu</Link> 
         </div>
     )
 }

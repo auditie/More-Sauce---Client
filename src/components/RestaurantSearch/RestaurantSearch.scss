@@ -1,0 +1,82 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+
+
+.restaurant-search {
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+        margin-top: 10%;
+        margin-bottom: 10%;
+        background-color: white;
+        width: 50%;
+        height: 20%;
+        @include centered;
+
+        @include desktop {
+            margin-top: 5%;
+            margin-bottom: 5vh;
+            height: 10%;
+        }
+    }
+
+    &__search-request {
+        display: flex;
+        flex-direction: row;
+        
+        &-bar {
+            @include centered;
+            border: none;
+            border-radius: 30px;
+            width: 75%;
+            height: 3.5vh;
+            margin-bottom: 10%;
+            padding: .8em;
+            font-size: 1.3em;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 35px;
+
+            @include desktop {
+                width: 45vw;
+                height: 3vh;
+            }
+        }
+
+        &-start {
+            background-color: $dark-blue;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 25px;
+            border: none;
+            color: $white;
+
+            @include desktop {
+                font-size: 1.3em;
+                width: 7vw;
+                height: 6vh;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 3vh;
+
+        @include desktop {
+            @include centered;
+            flex-direction: row;
+            gap: 5%;
+        }
+    }
+
+    &__login, &__search-submit {
+        @include button-cta;
+    }
+
+    &__restaurants {
+        margin-top: 4vh;
+    }
+}

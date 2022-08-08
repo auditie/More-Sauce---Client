@@ -3,6 +3,8 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import RestaurantSauce from '../../components/RestaurantSauce/RestaurantSauce';
 
+const API_URL = 'http://localhost:8080';
+
 class RestaurantPage extends Component {
     state = {
 
