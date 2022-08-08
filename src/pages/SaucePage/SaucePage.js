@@ -2,16 +2,44 @@ import './SaucePage.scss';
 import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SauceComment from '../../components/SauceComment/SauceComment';
+import axios from 'axios';
+
+const API_URL = 'http://localhost:8080';
 
 
 class SaucePage extends Component {
+    state = {
+        selectedSauce: null
+    }
+
+    getRestaurantSauce = (id) => {
+        axios.get(`${API_URL}/sauces/${id}`)
+            .then((response) => {
+                // console.log(response.data)
+                this.setState({
+                    selectedSauce: response.data
+                })
+            })
+    }
+
+    componentDidMount() {
+        console.log(this.props)
+        this.getRestaurantSauce(this.props.match.params.sauceId)
+    }
 
     render() {
+        const currentSauce = this.state.selectedSauce;
+        //console.log(currentSauce)
+        if (!this.state.selectedSauce) {
+            return (
+                <h1>Loading...</h1>
+            )
+        }
         return (
             <div className='sauce-page'>
                 <div className='sauce-page__head'>
                     <div className='sauce-page__head-left'>
-                        <h1 className='sauce-page__head-title'>Arby's Sauce</h1>
+                        <h1 className='sauce-page__head-title'>{currentSauce.sauceName}</h1>
                         <h2 className='sauce-page__head-subtitle'>Community Rating</h2>
                         <div className='sauce-page__head-rating'>4.5</div>
                     </div>
