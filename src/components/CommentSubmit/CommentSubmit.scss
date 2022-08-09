@@ -1,0 +1,75 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/global' as *;
+
+.comment-submit{
+    position: relative;
+    border: 2px solid $dark-blue;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    margin-bottom: 3vh;
+    padding: 2vh 1vw;
+
+    &__close {
+        position: absolute;
+        right: 15px;
+        height: 2.5em;
+        width: 2.5em;
+        border-radius: 50%;
+        border: none;
+        background-color: $dark-blue;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        &-icon {
+            padding-top: .2vh;
+        }
+    }
+
+    &__form {
+        padding-top: 2vh;
+        display: flex;
+        flex-direction: column;
+
+        &-divide {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 2vh;
+        }
+
+        &-cta {
+            font-size: 1.2em;
+            height: 3.6vh;
+            width: 40%;
+            background-color: $dark-blue;
+            color: $white;
+            border: none;
+            border-radius: 15px;
+            margin-top: 2.7vh;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        &-label {
+            color: $dark-blue;
+            font-weight: 600;
+            font-size: 1.2em;
+        }
+
+        &-input {
+            font-size: 1.1em;
+            border: 1px solid #0A225D;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 15px;
+            padding: .2vh 1vw;
+            height: 3vh;
+            width: 18vw;
+
+            &--large {
+                padding: .5vh 1vw;
+                width: auto;
+                height: 5vh;
+            }
+        }
+    }
+}

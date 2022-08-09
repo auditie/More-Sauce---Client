@@ -2,7 +2,7 @@ import './RestaurantsListItem.scss';
 import { Link } from 'react-router-dom';
 
 const RestaurantsList = ({ restaurant }) => {
-    console.log(restaurant)
+    //console.log(restaurant)
     return (
         <div className='restaurant'>
             <div className='restaurant__left'>

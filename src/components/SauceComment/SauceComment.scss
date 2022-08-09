@@ -7,14 +7,16 @@
     border: $dark-blue 2px solid;
     border-radius: 25px;
     padding: 1vh 1vw;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include box-shadow;
     margin-bottom: 3vh;
 
     &__username {
         color: $dark-blue;
+        font-size: 1.3em;
     }
 
     &__input {
         color: $dark-blue;
+        font-size: 1.1em;
     }
 }

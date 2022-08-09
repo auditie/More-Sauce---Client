@@ -8,7 +8,7 @@
     padding: 4vh 4vw;
     background-color: $white;
     border-radius: 25px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include box-shadow;
 
     @include tablet {
         width: 80%;
@@ -25,11 +25,19 @@
         justify-content: space-between;
         margin-bottom: 3vh;
 
+        &-title {
+            @include header-1;
+        }
+
+        &-subtitle {
+            @include header-2;
+        }
+
         &-exit {
             background-color: $dark-blue;
             border: none;
             border-radius: 50%;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            @include box-shadow;
 
             @include desktop {
                 font-size: 2em;
@@ -40,6 +48,25 @@
             &--link {
                 color: $white;
                 text-decoration: none;
+            }
+
+            &-icon {
+                @include back-arrow;
+            }
+        }
+
+        &-rating {
+            font-size: 2em;
+            display: flex;
+            flex-direction: row;
+        }
+
+        &-star {
+            display: block;
+            @include desktop {
+                height: 3.5vh;
+                padding-top: .35vh;
+                padding-left: .6vw;
             }
         }
     }
@@ -53,6 +80,7 @@
             &-title {
                 color: $dark-blue;
                 margin: none;
+                font-size: 1.7em;
             }
 
             &-cta {
@@ -60,12 +88,13 @@
                 border: none;
                 background-color: $dark-blue;
                 color: $white;
+                @include box-shadow;
 
                 @include desktop {
                     font-size: 1.1em;
                     width: 12vw;
                     height: 3.2vh;
-                    margin-top: 2vh;
+                    margin-top: 2.8vh;
                 }
             }
 

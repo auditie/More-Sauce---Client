@@ -1,10 +1,10 @@
 import './SauceComment.scss';
 
-const SauceComment = () => {
+const SauceComment = ({ comment }) => {
     return (
         <div className='sauce-comment'>
-            <h3 className='sauce-comment__username'>sauce_lover22</h3>
-            <p className='sauce-comment__input'>Palo santo crucifix cliche, paleo praxis pok pok woke hexagon before they sold out coloring book pork belly gochujang. </p>
+            <h3 className='sauce-comment__username'>{comment.userName} says...</h3>
+            <p className='sauce-comment__input'>"{comment.comment}"</p>
         </div>
     )
 }
