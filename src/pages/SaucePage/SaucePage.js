@@ -41,7 +41,10 @@ class SaucePage extends Component {
 
         axios.post(`${API_URL}/comments`, newComment)
         .then((response) => {
-            this.props.history.push('/comments')
+            console.log("Success!")
+            this.setState({
+                sauceComments: [...this.state.sauceComments, response.data]
+            })
         })
         .catch((error) => {
             console.log('Error: ', error);
@@ -67,10 +70,6 @@ class SaucePage extends Component {
             })
         })
     }
-
-   findNumbers = (array) => {
-
-   } 
 
     render() {
         const currentSauce = this.state.selectedSauce;

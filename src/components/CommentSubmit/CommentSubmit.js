@@ -7,7 +7,7 @@ const CommentSubmit = ({ postComment }) => {
             <button className='comment-submit__close'>
                 <img src={exit} alt='back arrow' className='comment-submit__close-icon' />
             </button>
-            <form className='comment-submit__form'>
+            <form className='comment-submit__form' onSubmit={postComment}>
                 <div className='comment-submit__form-divide'>
                     <div>
                         <label for='userName' className='comment-submit__form-label'>User Name:</label><br />
@@ -16,9 +16,9 @@ const CommentSubmit = ({ postComment }) => {
                         id='userName'
                         className='comment-submit__form-input' />
                     </div>
-                    <button className='comment-submit__form-cta' onSubmit={postComment}>Comment</button>
+                    <button className='comment-submit__form-cta' >Comment</button>
                 </div>
-                <label for='comment' className='comment-submit__form-label'>Comment:</label>
+                <label for='comment' className='comment-submit__form-label' >Comment:</label>
                 <input
                 type='text'
                 id='comment'
