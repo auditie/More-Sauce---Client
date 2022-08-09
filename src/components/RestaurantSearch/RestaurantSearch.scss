@@ -8,75 +8,44 @@
     display: flex;
     flex-direction: column;
 
-    &__logo {
-        margin-top: 10%;
-        margin-bottom: 10%;
-        background-color: white;
-        width: 50%;
-        height: 20%;
-        @include centered;
-
-        @include desktop {
-            margin-top: 5%;
-            margin-bottom: 5vh;
-            height: 10%;
-        }
-    }
-
     &__search-request {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         
         &-bar {
-            @include centered;
             border: none;
             border-radius: 30px;
-            width: 75%;
+            width: 70%;
             height: 3.5vh;
             margin-bottom: 4%;
             padding: .8em;
             font-size: 1.3em;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            @include box-shadow;
             border-radius: 35px;
 
             @include desktop {
-                width: 45vw;
+                width: 43vw;
                 height: 3vh;
             }
         }
 
         &-start {
             background-color: $dark-blue;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 25px;
+            @include box-shadow;
+            border-radius: 30px;
             border: none;
             color: $white;
 
             @include desktop {
-                font-size: 1.3em;
+                font-size: 1.6em;
                 width: 7vw;
-                height: 6vh;
+                height: 6.2vh;
             }
         }
     }
 
-    &__buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 3vh;
-
-        @include desktop {
-            @include centered;
-            flex-direction: row;
-            gap: 5%;
-        }
-    }
-
-    &__login, &__search-submit {
-        @include button-cta;
-    }
-
     &__restaurants {
-        margin-top: 4vh;
+        margin-top: 3vh;
     }
 }

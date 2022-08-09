@@ -22,9 +22,7 @@ function App() {
             <Route path='/login' component={LoginPage} />
             <Route path='/signup' component={SignupPage} />
             <Route path='/sauces/:sauceId' component={SaucePage} />
-            {/* <Route path='/restaurants' component={RestaurantList} />*/}
             <Route path='/restaurants/:restaurantId' component={RestaurantPage} />
-            {/* <Route path='/restaurants/:restaurantId/:sauceId' component={SauceItem} />*/}
           </Switch>
         </div>
     </Router>

@@ -56,7 +56,7 @@ class RestaurantPage extends Component {
                     </div>
                     <div className='restaurant-page__head-right'>
                         <button className='restaurant-page__head-exit'>
-                            <Link to ='/' className='restaurant-page__head-exit--link'><img src={backArrow} alt='backwards arrow'/> </Link>
+                            <Link to ='/' className='restaurant-page__head-exit--link'><img src={backArrow} alt='backwards arrow' className='restaurant-page__head-exit-icon' /> </Link>
                         </button>
                     </div>
                 </div>
