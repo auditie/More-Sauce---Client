@@ -34,6 +34,8 @@
 @mixin header-1 {
     font-size: 3.5em;
     margin: 0;
+    line-height: 1.3em;
+    margin-bottom: 1.5vh;
 }
 
 @mixin header-2 {
@@ -42,7 +44,7 @@
 }
 
 @mixin back-arrow {
-    padding-top: .3vh;
+    padding-top: .5vh;
 }
 
 @mixin box-shadow {
