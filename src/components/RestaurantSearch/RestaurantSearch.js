@@ -15,10 +15,6 @@ const RestaurantSearch = (props) => {
                         />
                         <button className='restaurant-search__search-request-start' type='submit' >Go</button>
                     </form>
-                    {/* <div className='restaurant-search__buttons'>
-                        <button type='submit' className='restaurant-search__search-submit'>Pour Sauce</button>
-                        <button type='submit' className='restaurant-search__login'>Log In</button>
-                    </div> */}
                     <div className='restaurant-search__restaurants'>
                         {
                             props.restaurants.map((restaurant) => {
