@@ -69,7 +69,8 @@ class HomePage extends Component {
     }
 
     handleInput = (event) => {
-        // console.log(event.target.value);
+        event.preventDefault();
+        //console.log(event.target.value);
         this.setState({
             restaurantInput: event.target.value
         });
@@ -81,38 +82,35 @@ class HomePage extends Component {
         const restaurantArr = [];
         const restaurants = this.state.restaurantList;
         restaurants.map((restaurant) => {
-            if(restaurant.name === this.state.inputRestaurant) {
+            if(restaurant.name === this.state.restaurantInput) {
                 restaurantArr.push(restaurant);
             }
+            this.setState({ restaurantList: [] })
             this.setState({ restaurantList: restaurantArr })
-            console.log(this.state.restaurantList);
+            //console.log(this.state.restaurantList);
         })
     }
 
     render() {
         return (
-            <div className='home-page'>
-                <Switch>
-                    <Route path='/' exact component={(routerProps) => {
-                        return (
-                        <RestaurantSearch 
-                        restaurants={this.state.restaurantList}
-                        handleInput={this.handleInput}
-                        findRestaurant={this.findRestaurants}
-                        restaurantInput={this.state.restaurantInput}
-                        />
-                        )
-                    }} />
-                    <Route path='/restaurants/:restaurantId' exact component={(routerProps) => {
-                        return (
-                            <RestaurantPage 
-                                restaurant={this.state.selectedRestaurant}
-                                sauces={this.state.saucesList}
-                            />
-                        )
-                    }} />
-
-                </Switch>
+            <div className='restaurant-search'>
+                <form className='restaurant-search__search-request' onSubmit={this.findRestaurants}>
+                    <input type='text' 
+                        placeholder='Search Restaurants...' 
+                        className='restaurant-search__search-request-bar' 
+                        id='restaurantName'
+                        onChange={this.handleInput}
+                        value={this.state.restaurantInput}
+                    />
+                    <button className='restaurant-search__search-request-start' >Go</button>
+                </form>
+                <div className='restaurant-search__restaurants'>
+                    {
+                        this.state.restaurantList.map((restaurant) => {
+                            return <RestaurantsListItem restaurant={restaurant} key={restaurant.id} />
+                        })
+                    }
+                </div>
             </div>
         )
     }

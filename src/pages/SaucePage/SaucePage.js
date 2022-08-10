@@ -43,7 +43,7 @@ class SaucePage extends Component {
         .then((response) => {
             console.log("Success!")
             this.setState({
-                sauceComments: [...this.state.sauceComments, response.data]
+                sauceComments: [response.data, ...this.state.sauceComments]
             })
         })
         .catch((error) => {
