@@ -11,9 +11,10 @@
     background-color: white;
     @include box-shadow;
     border-radius: 40px;
-    padding: .5vh 1vw .5vh 2vw;
+    padding: 1vh 1vw 1vh 2vw;
 
     &__name {
+        margin: 0;
         color: $dark-blue;
         @include desktop {
             font-size: 1.5em;
@@ -27,10 +28,9 @@
         border-radius: 30px;
 
         @include desktop {
-            margin-top: 2.3vh;
             height: 3vh;
             font-size: 1.2em;
-            padding: .5vh 2vw;
+            padding: .5vh 2vw .8vh 2vw;
         }
     }
 }

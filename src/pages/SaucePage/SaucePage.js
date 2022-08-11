@@ -94,7 +94,7 @@ class SaucePage extends Component {
                     <div className='sauce-page__head-left'>
                         <h1 className='sauce-page__head-title'>{currentSauce.sauceName}</h1>
                         <h2 className='sauce-page__head-subtitle'>Community Rating</h2>
-                        <div className='sauce-page__head-rating'>{roundedRating}<img src={star} className='sauce-page__head-star' alt='star' /></div>
+                        <div className='sauce-page__head-rating'>{roundedRating} out of 5<img src={star} className='sauce-page__head-star' alt='star' /></div>
                     </div>
                     <div className='sauce-page__head-right'>
                         <button className='sauce-page__head-exit'>

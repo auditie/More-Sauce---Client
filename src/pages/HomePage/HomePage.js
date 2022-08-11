@@ -2,9 +2,7 @@ import './HomePage.scss';
 import { Component } from 'react';
 import RestaurantsListItem from '../../components/RestaurantsListItem/RestaurantsListItem';
 import axios from 'axios';
-import { Route, Switch } from 'react-router-dom';
-import RestaurantSearch from '../../components/RestaurantSearch/RestaurantSearch';
-import RestaurantPage from '../RestaurantPage/RestaurantPage';
+import RestaurantListItem from '../../components/RestaurantsListItem/RestaurantsListItem';
 
 const API_URL = 'http://localhost:8080';
 
@@ -19,7 +17,6 @@ class HomePage extends Component {
     getRestaurant = id => {
         axios.get(`${API_URL}/restaurants/${id}`)
             .then((response) => {
-                // console.log(response.data)
                 this.setState({
                     selectedRestaurant: response.data
                 })
@@ -29,7 +26,6 @@ class HomePage extends Component {
     getRestaurantSauces = (id) => {
         axios.get(`${API_URL}/sauces/${id}`)
             .then((response) => {
-                // console.log(response.data)
                 this.setState({
                     saucesList: response.data
                 })
@@ -39,7 +35,6 @@ class HomePage extends Component {
     componentDidMount() {
         axios.get(`${API_URL}/restaurants`)
         .then((response) => {
-            // console.log(response.data);
             this.setState({
                 restaurantList: response.data
             });
@@ -70,13 +65,11 @@ class HomePage extends Component {
 
     handleInput = (event) => {
         event.preventDefault();
-        //console.log(event.target.value);
         this.setState({
             restaurantInput: event.target.value
         });
     }
 
-    // // this needs work
     findRestaurants = (event) => {
         event.preventDefault();
         const restaurantArr = [];
@@ -87,7 +80,6 @@ class HomePage extends Component {
             }
             this.setState({ restaurantList: [] })
             this.setState({ restaurantList: restaurantArr })
-            //console.log(this.state.restaurantList);
         })
     }
 
@@ -102,7 +94,7 @@ class HomePage extends Component {
                         onChange={this.handleInput}
                         value={this.state.restaurantInput}
                     />
-                    <button className='restaurant-search__search-request-start' >Go</button>
+                    <button className='restaurant-search__search-request-start'>Go</button>
                 </form>
                 <div className='restaurant-search__restaurants'>
                     {

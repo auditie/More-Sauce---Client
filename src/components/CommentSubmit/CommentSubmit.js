@@ -8,9 +8,9 @@ const CommentSubmit = ({ postComment }) => {
                 <img src={exit} alt='back arrow' className='comment-submit__close-icon' />
             </button>
             <form className='comment-submit__form' onSubmit={postComment}>
+            <label for='userName' className='comment-submit__form-label'>User Name:</label>
                 <div className='comment-submit__form-divide'>
                     <div>
-                        <label for='userName' className='comment-submit__form-label'>User Name:</label><br />
                         <input 
                         type='text' 
                         id='userName'

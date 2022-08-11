@@ -2,3 +2,51 @@
 @use '../../styles/partials/colors' as *;
 @use '../../styles/partials/fonts' as *;
 @use '../../styles/partials/global' as *;
+
+
+.restaurant-search {
+    display: flex;
+    flex-direction: column;
+
+    &__search-request {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        &-bar {
+            border: none;
+            border-radius: 30px;
+            width: 40%;
+            height: 3.5vh;
+            margin-bottom: 4%;
+            padding: .8em;
+            font-size: 1.3em;
+            @include box-shadow;
+            border-radius: 35px;
+
+            @include desktop {
+                width: 43vw;
+                height: 3vh;
+            }
+        }
+
+        &-start {
+            background-color: $dark-blue;
+            @include box-shadow;
+            border-radius: 30px;
+            border: none;
+            color: $white;
+
+            @include desktop {
+                font-size: 1.6em;
+                width: 7vw;
+                height: 6.2vh;
+                margin-top: .5vh;
+            }
+        }
+    }
+
+    &__restaurants {
+        margin-top: 3vh;
+    }
+}
