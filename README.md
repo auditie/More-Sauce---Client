@@ -19,6 +19,7 @@ Installation guide:
 API: 
 - Made by Audun Young
 - Data sources from restaurant menus
+- https://github.com/auditie/More-Sauce--server (This is the API Repository)
 
 
 Lessons learned & Next steps:
